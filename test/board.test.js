@@ -1,5 +1,4 @@
-const ticTacToe = require("./app.js");
-const board = ticTacToe.board;
+const board = require("../src/board.js");
 const isXWinner = board.isXWinner;
 const isOWinner = board.isOWinner;
 

@@ -3,14 +3,14 @@ const board = {
   xBoard: [],
   oBoard: [],
   winPatterns: [
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
-    [0, 3, 6],
-    [1, 4, 7],
-    [2, 5, 8],
-    [0, 4, 8],
-    [6, 4, 2]
+    ["0", "1", "2"],
+    ["3", "4", "5"],
+    ["6", "7", "8"],
+    ["0", "3", "6"],
+    ["1", "4", "7"],
+    ["2", "5", "8"],
+    ["0", "4", "8"],
+    ["6", "4", "2"]
   ],
   isWinner() {
     if (this.player === "X") {
@@ -55,7 +55,12 @@ const board = {
   selectSquare(squareIndex) {
     if (this.player === "X") this.xBoard.push(squareIndex);
     if (this.player === "O") this.oBoard.push(squareIndex);
+  },
+  startNew() {
+    this.player = "X";
+    this.xBoard = [];
+    this.oBoard = [];
   }
 };
 
-module.exports = { board };
+module.exports = board;
